@@ -7,7 +7,7 @@ routes.get('/membros', async (request, response) => {
     try{
         membros = await connection('membros')
         .select('id','nome','telefone');
-        console.log('deu')
+        
         return response.status(200).json(membros);
     }catch(err){
         return response.status(400).json({erro:'Erro ao carregar membros: ' + err})
